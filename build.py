@@ -35,11 +35,3 @@ def biggest_difference_in_gold_medal(df):
 def get_points(df):
     df['points'] = (df['Gold.2']*3+df['Silver.2']*2+df['Bronze.2'])
     return df['points']
-#get_points(load_data()).columns.valuesget_points(load_data())#print gold_medal(load_data())
-#print biggest_difference_in_gold_medal(load_data())
-#print get_points(load_data()).head()
-# df = load_data()
-# print(first_country(df)["# Summer"])
-# print(gold_medal(df))
-# print(biggest_difference_in_gold_medal(df))
-# print(get_points(df))
