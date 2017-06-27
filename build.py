@@ -13,12 +13,7 @@ def load_data():
         elif bool(re.match(".*03 !.*",i)):
             olympics.rename(columns={i:re.sub('03 !','Bronze',i)},inplace=True)
     olympics['Country_name']=olympics['Country_name'].apply(lambda x:x.split("\xc2\xa0")[0])
-    df=pd.DataFrame(data = list(olympics['Country_name']),columns = ['1'])
-    index=[]
-    olympics.index=df['1']
-    for i in olympics.index:
-        index.append(i.replace('\xc2\xa0', ''))
-    olympics.index = index
+    olympics.index=olympics['Country_name']
     olympics=olympics[olympics.Country_name != "Totals"]
     return olympics
 
